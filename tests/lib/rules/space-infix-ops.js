@@ -33,7 +33,8 @@ ruleTester.run("space-infix-ops", rule, {
         { code: "function foo(a: number = 0) { }", parser: path.resolve(__dirname, "../../fixtures/parsers/flow-stub-parser.js"), parserOptions: { ecmaVersion: 6 } },
         { code: "a ** b", parserOptions: { ecmaVersion: 7 } },
         { code: "a|0", options: [{ int32Hint: true }] },
-        { code: "a |0", options: [{ int32Hint: true }] }
+        { code: "a |0", options: [{ int32Hint: true }] },
+        { code: "function foo(a=0) { }", options: [{ allowDefaultValues: true }], parserOptions: { ecmaVersion: 6 } },
     ],
     invalid: [
         {
